@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import Testimonials from "../components/Testimonials";
+import GetInTouch from "../components/getintouch";
 import "../styles/Home.css";
 
 
@@ -50,6 +52,7 @@ const Home = () => {
       { name: "Equipments", image: "/assets/equipments.png", route: "/category/equipments" },
       { name: "Pots", image: "/assets/pots.png", route: "/category/pots" }
   ];
+  
 
   const handleCategoryClick = (route) => {
     navigate(route);
@@ -151,21 +154,6 @@ const Home = () => {
         <button className="scroll-btn right" onClick={() => scrollRight("bestseller-products")}>&gt;</button>
       </div>
 
-      {/* 🔥 Customer Testimonials */}
-      <h2 className="section-title">Customer Testimonials</h2>
-      <div className="scroll-container">
-        <button className="scroll-btn left" onClick={() => scrollLeft("testimonials")}>&lt;</button>
-        <div id="testimonials" className="scroll-content testimonials-content">
-          {[1, 2, 3, 4].map((id) => (
-            <div className="testimonial-card" key={id}>
-              <img src="/assets/divya1.jpg" alt="Customer" />
-              <p>"Amazing quality and service! Highly recommended."</p>
-              <strong>- Customer {id}</strong>
-            </div>
-          ))}
-        </div>
-        <button className="scroll-btn right" onClick={() => scrollRight("testimonials")}>&gt;</button>
-      </div>
 
       {/* 🔥 Today's Deal */}
       <h2 className="section-title">Today's Deal</h2>
@@ -179,6 +167,56 @@ const Home = () => {
         </div>
       </div>
 
+     {/* 🌿 About Us Section */}
+<div className="about-us">
+  <div className="about-image">
+    <img src="/assets/AboutUs.webp" alt="About Agrimart" />
+  </div>
+  <div className="about-content">
+    <h4 className="about-title">ABOUT US</h4>
+    <h2 className="about-heading">Empowering Farmers, Growing Together</h2>
+    <p className="about-text">
+      At <strong>Agrimart</strong>, we are committed to revolutionizing agriculture by providing high-quality 
+      farming equipment, organic seeds, and eco-friendly solutions. Our mission is to support farmers and 
+      gardeners with sustainable products that enhance productivity and preserve the environment.
+    </p>
+    <p className="about-text">
+      We believe in innovation and excellence, ensuring that our customers get the best tools and resources 
+      to succeed. Whether you're a professional farmer or a home gardener, Agrimart is your trusted partner 
+      in cultivating a greener future.
+    </p>
+    <button className="learn-more">Learn More →</button>
+  </div>
+</div>
+
+<div className="features-section">
+  <div className="feature">
+    <img src="/assets/EcoFriendly.webp" alt="Eco Friendly" />
+    <h3>Eco Friendly</h3>
+    <p>We are committed to protecting the environment.</p>
+  </div>
+
+  <div className="feature">
+    <img src="/assets/AffordabalePrice.webp" alt="Affordable Pricing" />
+    <h3>Affordable Pricing</h3>
+    <p>Giving the best value for your money with our competitive pricing.</p>
+  </div>
+
+  <div className="feature">
+    <img src="/assets/PremiumQuality.webp" alt="Premium Quality" />
+    <h3>Premium Quality</h3>
+    <p>Consistently providing high-quality results you can count on.</p>
+  </div>
+
+  <div className="feature">
+    <img src="/assets/Reliablity.webp" alt="Professionalism" />
+    <h3>Professionalism</h3>
+    <p>Our team is dedicated to delivering reliable, high-quality solutions.</p>
+  </div>
+</div>
+
+
+
       {/* 🔥 FAQ Section */}
       <h2 className="section-title">Frequently Asked Questions</h2>
       <div className="faq">
@@ -191,6 +229,8 @@ const Home = () => {
           <p>We accept UPI, Net Banking, and COD.</p>
         </div>
       </div>
+      <Testimonials />
+      <GetInTouch/>
     </div>
   );
 };

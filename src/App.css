@@ -1,7 +1,27 @@
+/* ✅ Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ✅ Global Reset - Pure Project ke liye */
+* {
+  font-family: 'Poppins', sans-serif; /* ✅ Poore project me Poppins font apply hoga */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ✅ Body Styling */
+body {
+  background-color: #f8f9fa; /* Halka Grey Background */
+  color: #333; /* Default Text Color */
+  line-height: 1.6;
+}
+
+/* ✅ Main App Container */
 .App {
   text-align: center;
 }
 
+/* ✅ Logo Styling */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,6 +33,7 @@
   }
 }
 
+/* ✅ Header Styling */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,10 +45,30 @@
   color: white;
 }
 
+/* ✅ Links */
 .App-link {
   color: #61dafb;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
 }
 
+.App-link:hover {
+  color: #1e90ff;
+}
+
+/* ✅ Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(8px + 2vmin);
+  }
+}
+
+/* ✅ Logo Animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

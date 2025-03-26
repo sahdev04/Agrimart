@@ -1,0 +1,19 @@
+.signup {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .signup input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+  }
+  
+  .signup-btn {
+    background-color: purple;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  

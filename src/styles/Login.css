@@ -1,0 +1,19 @@
+.login {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .login input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+  }
+  
+  .login-btn {
+    background-color: navy;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  

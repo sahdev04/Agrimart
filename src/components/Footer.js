@@ -8,10 +8,10 @@ const Footer = () => {
         {/* ✅ Left Side - Logo & Tagline */}
         <div className="footer-brand">
           <h2 className="logo">
-            <img src="/logo.png" alt="Agrimart" className="footer-logo" />
+            <img src="assets/logo.png" alt="Agrimart" className="footer-logo" />
           </h2>
           <p className="tagline">
-            “Small Steps Today, A Greener Tomorrow” <br />
+            “Small Steps Today, A Greener Tomorrow” 
             We believe in building trust, fostering long-term relationships, 
             and delivering results that exceed expectations.
           </p>

@@ -1,68 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 .home-container {
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Carousel */
 .carousel-container {
   position: relative;
-  width: 100%;
-  height: 450px;
+  top: 0;
+  width: 100vw;
+  height: 500px;
+  left: 0;
+  right: 0;
   overflow: hidden;
+  margin-top: -20px;
+  margin-left: -20px;
 }
 
 .carousel-slide img {
-  width: 100%;
-  height: 450px;
+  width: 100vw;
+  height: 500px;
   object-fit: cover;
-  border-radius: 8px;
 }
 
-/* Enhanced Search Bar Inside Carousel */
-.search-bar {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  padding: 10px; /* Reduced padding to make it smaller */
-  border-radius: 25px; /* Adjusted for smaller size */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-  background: rgba(255, 255, 255, 0.774);
-}
-
-.search-bar input {
-  width: 350px; /* Reduced width */
-  padding: 10px; /* Adjusted padding */
-  border: none;
-  border-radius: 30px 0 0 30px;
-  outline: none;
-  font-size: 12px;
-  background: rgba(255, 255, 255, 0.7);
-  transition: background 0.3s;
-}
-
-.search-bar input:focus {
-  background: rgba(255, 255, 255, 1);
-}
-
-.search-bar button {
-  padding: 10px 20px; /* Adjusted padding */
-  background: linear-gradient(135deg, #28a745, #218838);
-  color: white;
-  border: none;
-  border-radius: 0 30px 30px 0;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.search-bar button:hover {
-  background: linear-gradient(135deg, #218838, #1e7e34);
-  transform: scale(1.1);
-}
 
 /* Section Titles */
 .section-title {
@@ -77,9 +38,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
-  padding: 0 60px;
-  overflow: hidden;
+  overflow: visible;
+  padding: 20px 60px;
 }
 
 .scroll-content {
@@ -90,178 +50,205 @@
   white-space: nowrap;
   width: max-content;
   margin: 0 auto;
+  overflow: visible;
 }
 
-/* Arrow Buttons */
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #28a745, #218838); /* Stylish Gradient */
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-}
 
-.scroll-btn:hover {
-  background: linear-gradient(135deg, #218838, #1e7e34); /* Darker Green on Hover */
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.scroll-btn:active {
-  transform: scale(0.9);
-}
-
-.scroll-btn.left {
-  left: 10px;
-}
-
-.scroll-btn.right {
-  right: 10px;
-}
-
-/* Categories as Cards */
+/* Categories Section */
 .categories {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px; 
   flex-wrap: wrap;
-  scroll-behavior: smooth;
-  white-space: nowrap;
+  padding: 20px;
 }
 
 .category {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
-  padding: 20px;
-  width: 160px;
-  border-radius: 12px;
-  border: 2px solid #ddd;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  width: 140px;
+  height: 140px;
+  position: relative;
   transition: 0.3s;
-  text-align: center;
+  cursor: pointer;
 }
 
 .category img {
-  width: 110px;
-  height: 110px;
+  width: 70px; /* Image छोटी */
+  height: 70px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 10px;
+  border: 3px solid white;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease-in-out;
 }
 
 .category span {
-  font-size: 18px;
+  position: absolute;
+  bottom: 10px;
+  font-size: 14px;
+  font-weight: 550;
+  text-align: center;
+  width: 100%;
+  color: #333;
+}
+
+/* ✅ सिर्फ image हल्का उभरेगा */
+.category:hover img {
+  transform: translateX(-50%) scale(1.1);
+}
+
+/* Product Card */
+.product-card {
+  background-color: #fff;
+  padding: 15px;
+  width: 220px;
+  border-radius: 12px;
+  border: 2px solid #ddd; /* Default Border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  position: relative;
+}
+
+/* Hover Effect - पूरा कार्ड उठे और border green हो जाए */
+.product-card:hover {
+  transform: translateY(-5px); /* हल्का ऊपर उठे */
+  border-color: #28a745; /* Green border */
+  box-shadow: 0 6px 15px rgba(0, 128, 0, 0.3); /* गहरा shadow */
+  z-index: 10;
+}
+
+/* Image Hover - सिर्फ image हल्का उभरे */
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Image Container */
+.product-card .image-container {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  border-radius: 12px;
+  position: relative;
+}
+
+/* Product Image */
+.product-card img {
+  max-width: 120px;
+  max-height: 140px;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Product Title */
+.product-card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Price & Rating - एक लाइन में */
+.price-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+/* Price */
+.price {
+  font-size: 14px;
   font-weight: bold;
   color: #333;
 }
 
-.category:hover {
-  border-color: green;
-  box-shadow: 0 7px 14px rgba(0, 128, 0, 0.3);
-  transform: translateY(-6px);
-}
-
-/* Featured Products */
-.featured-products {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.product-card {
-  background-color: #fff;
-  padding: 20px;
-  width: 220px;
-  border-radius: 12px;
-  border: 2px solid #ddd;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  transition: 0.3s;
-  text-align: center;
-}
-
-.product-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.product-card h3 {
-  font-size: 20px;
+/* Rating */
+.rating {
+  font-size: 12px;
+  color: green;
   font-weight: bold;
-  margin: 12px 0;
+  display: flex;
+  align-items: center;
 }
 
-.product-card p {
-  font-size: 15px;
-  color: #555;
-  margin: 6px 0;
+/* Rating Star Icon */
+.rating i {
+  color: #ffc107;
+  font-size: 14px;
+  margin-left: 3px;
 }
-.product-card:hover {
-  border-color: green;
-  box-shadow: 0 7px 14px rgba(0, 128, 0, 0.3);
-  transform: translateY(-6px);
-}
-/* Button Container */
+
+/* Button Group */
 .button-group {
   display: flex;
-  justify-content: space-between; /* दोनों बटन बराबर दूरी पर */
-  gap: 10px; /* बटन के बीच में गैप */
+  gap: 10px;
+  justify-content: center;
   margin-top: 10px;
-  border-bottom: #1e7e34;
 }
 
-/* View Details Button */
+/* View Details */
 .view-details {
-  flex: 1;
-  background: white; /* ✅ White background */
+  background: white;
   color: black;
-  padding: 10px 15px;
-  border: 2px solid #1e7e34; /* ✅ Green Border */
-  border-radius: 6px;
-  font-weight: bold;
-  text-align: center;
+  border: 2px solid #1e7e34;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  font-family:  'Poppins', sans-serif;
 }
 
 .view-details:hover {
-  background-color: #1e7e34;  /* ✅ Green Background on Hover */
-  color: white;  /* ✅ White Text on Hover */
-  border-color: #1e7e34;
+  background: #1e7e34;
+  color: white;
 }
 
-/* Add to Cart Button */
+/* Add to Cart */
 .add-to-cart {
-  background-color: #1e7e34 !important; 
+  background-color: #1e7e34 !important;
   color: white;
   border: none;
-  padding: 10px 15px;
-  cursor: pointer;
+  padding: 6px 10px;
   font-size: 12px;
-  font-weight: bold;
   border-radius: 5px;
-  transition: 0.3s;
+  cursor: pointer;
+  font-family:  'Poppins', sans-serif;
 }
 
 .add-to-cart:hover {
   background-color: #218838;
 }
+
+/* "View All" Button */
+.view-all {
+  display: block;
+  width: 150px;
+  margin: 20px auto;
+  text-align: center;
+  background: #ff5a5f;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view-all:hover {
+  background: #e0464d;
+}
+
+
+
 
 .go-to-cart {
   background-color: #007bff;
@@ -270,9 +257,9 @@
   padding: 10px 15px;
   cursor: pointer;
   font-size: 12px;
-  font-weight: bold;
   border-radius: 5px;
   transition: 0.3s;
+  font-family:  'Poppins', sans-serif;
 }
 
 .go-to-cart:hover {
@@ -405,16 +392,53 @@
 /* FAQ Section */
 .faq {
   margin-top: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .faq-item {
-  background: #fff;
+  background: #f9f9f9;
   padding: 15px;
   border-radius: 8px;
   border: 1px solid #ddd;
   margin-bottom: 10px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
+
+.faq-item:hover {
+  background: #e6f7e6;
+  border-color: #4caf50;
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  display: none; /* Default hidden */
+}
+
+.faq-item.active .faq-answer {
+  display: block; /* Show answer when active */
+}
+
+.faq-toggle-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.faq-item.active .faq-toggle-icon {
+  transform: rotate(180deg); /* Rotate icon when active */
+}
+
 .deal-card {
   background-color: #fff;
   padding: 15px;

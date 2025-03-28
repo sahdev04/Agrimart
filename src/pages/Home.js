@@ -33,24 +33,26 @@ const Home = () => {
 
   // Products data with unique names and images
   const featuredProducts = [
-    { id: 1, name: "Premium Fertilizer", price: 500, image: "/assets/fertilizers.png" },
-    { id: 2, name: "Organic Seeds", price: 600, image: "/assets/seeds.png" },
-    { id: 3, name: "Garden Tools Set", price: 700, image: "/assets/equipments.png" },
-    { id: 4, name: "Decorative Pots", price: 800, image: "/assets/pots.png" }
+    { id: 1, name: "Premium Fertilizer", price: 500, image: "/assets/fertilizer.png" },
+    { id: 2, name: "Organic Seeds", price: 600, image: "/assets/seed.png" },
+    { id: 3, name: "Garden Tools Set", price: 700, image: "/assets/equipment.png" },
+    { id: 4, name: "Decorative Pots", price: 800, image: "/assets/pot.png" }
   ];
 
   const bestsellerProducts = [
     { id: 5, name: "Advanced Fertilizer", price: 900, image: "/assets/117745_2.jpeg" },
-    { id: 6, name: "Flowering Seeds", price: 1000, image: "/assets/flowering.webp" },
+    { id: 6, name: "Flowering Seeds", price: 1000, image: "/assets/BalsamRed.png" },
     { id: 7, name: "Handheld Sprayer", price: 1100, image: "/assets/spray.jpg" },
-    { id: 8, name: "Premium Garden Tools", price: 1200, image: "/assets/gardeningtool.jpg" }
+    { id: 8, name: "Premium Garden Tools", price: 1200, image: "/assets/111.png" }
   ];
 
     const categories = [
-      { name: "Fertilizers", image: "/assets/fertilizers.png", route: "/category/fertilizers" },
-      { name: "Seeds", image: "/assets/seeds.png", route: "/category/seeds" },
-      { name: "Equipments", image: "/assets/equipments.png", route: "/category/equipments" },
-      { name: "Pots", image: "/assets/pots.png", route: "/category/pots" }
+      { name: "Fertilizers", image: "/assets/fertilize.png", route: "/category/fertilizers" },
+      { name: "Seeds", image: "/assets/seeds1.png", route: "/category/seeds" },
+      { name: "Equipments", image: "/assets/shovel.png", route: "/category/equipments" },
+      { name: "Pots", image: "/assets/flower-pot.png", route: "/category/pots" },
+      { name: "Pesticides", image: "/assets/pesticide.png", route: "/category/pesticides" },
+      { name: "Herbicides", image: "/assets/weed.png", route: "/category/herbicides" },
   ];
   
 
@@ -70,17 +72,10 @@ const Home = () => {
           ))}
         </Slider>
 
-        {/* 🔎 Search Bar */}
-        <div className="search-bar">
-          <input type="text" placeholder="Search for products..." />
-          <button>Search</button>
-        </div>
       </div>
 
       {/* 🔥 Search by Category */}
       <h2 className="section-title">Search by Category</h2>
-      <div className="scroll-container">
-        <button className="scroll-btn left" onClick={() => scrollLeft("categories")}>&lt;</button>
         <div id="categories" className="scroll-content">
           {categories.map((category, index) => (
             <div
@@ -93,13 +88,10 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <button className="scroll-btn right" onClick={() => scrollRight("categories")}>&gt;</button>
-      </div>
+      
 
       {/* 🔥 Featured Products */}
       <h2 className="section-title">Featured Products</h2>
-      <div className="scroll-container">
-        <button className="scroll-btn left" onClick={() => scrollLeft("featured-products")}>&lt;</button>
         <div id="featured-products" className="scroll-content">
           {featuredProducts.map((product) => (
             <div className="product-card" key={product.id}>
@@ -120,13 +112,9 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <button className="scroll-btn right" onClick={() => scrollRight("featured-products")}>&gt;</button>
-      </div>
 
       {/* 🔥 Bestseller Products */}
       <h2 className="section-title">Bestseller Products</h2>
-      <div className="scroll-container">
-        <button className="scroll-btn left" onClick={() => scrollLeft("bestseller-products")}>&lt;</button>
         <div id="bestseller-products" className="scroll-content">
           {bestsellerProducts.map((product) => (
             <div className="product-card" key={product.id}>
@@ -151,15 +139,13 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <button className="scroll-btn right" onClick={() => scrollRight("bestseller-products")}>&gt;</button>
-      </div>
 
 
       {/* 🔥 Today's Deal */}
       <h2 className="section-title">Today's Deal</h2>
       <div className="deal-container">
         <div className="product-card">
-          <img src="/assets/pots.png" alt="Deal Product" />
+          <img src="/assets/pot.png" alt="Deal Product" />
           <h3>Exclusive Deal</h3>
           <p>Price: <strike>₹1200</strike> ₹899</p>
           <p>⭐ 4.8/5</p>
@@ -227,6 +213,14 @@ const Home = () => {
         <div className="faq-item">
           <strong>What payment methods are available?</strong>
           <p>We accept UPI, Net Banking, and COD.</p>
+        </div>
+        <div className="faq-item">
+          <strong>What is the estimated delivery time?</strong>
+          <p> Orders are usually delivered within 3-7 business days, depending on your location.</p>
+        </div>
+        <div className="faq-item">
+          <strong>Do you offer free shipping?</strong>
+          <p>Yes, we offer free shipping on orders above ₹999.</p>
         </div>
       </div>
       <Testimonials />

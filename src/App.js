@@ -5,7 +5,6 @@ import { ToastContainer } from "react-toastify";  // ✅ Import ToastContainer
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import ProductPage from "./pages/ProductPage";
 import Blog from "./pages/Blog";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
@@ -14,6 +13,7 @@ import Signup from "./pages/Signup";
 import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 import "./styles/global.css";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -23,7 +23,6 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
@@ -31,6 +30,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
         <Footer />
       </Router>

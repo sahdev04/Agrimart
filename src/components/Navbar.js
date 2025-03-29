@@ -3,10 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import { CartContext } from "../context/CartContext"; // ✅ Import Cart Context
 import "../styles/Navbar.css"; 
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation(); // ✅ Current page का path पता करने के लिए
   const { cart } = useContext(CartContext); // ✅ Cart items को लाने के लिए
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar">
@@ -40,7 +42,9 @@ const Navbar = () => {
         <Link to="/profile" className="icon"><FaUser /></Link>
 
         {/* Login Button */}
-        <button className="login-btn">Login</button>
+        <button className="login-btn" onClick={() => navigate("/login")}>
+        Login
+      </button>
       </div>
     </nav>
   );

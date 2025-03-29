@@ -1,13 +1,361 @@
-.checkout {
-    text-align: center;
-    padding: 50px;
-  }
-  
-  .confirm-order {
-    background-color: darkgreen;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ✅ Checkout Page Styles Wrapper - Only Applies to Checkout */
+.checkout-container {
+    width: 90%;
+    max-width: 1100px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    margin: 40px auto; /* ✅ Fix for body styles */
+}
+
+/* ✅ Progress Bar */
+.progress-bar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.step {
+    color: gray;
+    transition: color 0.3s;
+}
+
+.step.active {
+    color: green;
+}
+
+/* ✅ Checkout Sections */
+.checkout-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* ✅ Left Section */
+.checkout-left {
+    flex: 1;
+    padding: 20px;
+}
+
+.checkout-left h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+/* ✅ Right Section */
+.checkout-right {
+    width: 350px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ No Address Found */
+.checkout-left .no-address {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* ✅ Add Address Button */
+.checkout-left .add-address {
+    background: #28a745;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.checkout-left .add-address:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* ✅ Order Item */
+.checkout-right .order-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkout-right .order-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.checkout-right .product-name {
+    font-weight: bold;
+}
+
+/* ✅ Price Breakdown */
+.checkout-right .price-breakdown p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+/* ✅ Coupon Section */
+.checkout-right .coupon-section {
+    margin: 12px 0;
+    text-align: center;
+}
+
+.checkout-right .coupon-btn {
+    background: #4caf50;
+    color: white;
+    padding: 10px;
+    width: 100%;
     border: none;
     cursor: pointer;
-  }
-  
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.checkout-right .coupon-btn:hover {
+    background: #388e3c;
+    transform: scale(1.05);
+}
+
+/* ✅ Payment Section */
+.checkout-right .payment-section {
+    margin: 12px 0;
+    font-family:  'Poppins', sans-serif;
+}
+
+.checkout-right .payment-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  color: #333;
+  outline: none;
+  appearance: none; /* Default arrow hide */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="%234caf50"><path d="M7 10l5 5 5-5z"></path></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+}
+
+/* Hover Effect */
+.checkout-right .payment-select:hover {
+  border-color: #4caf50;
+  background: #fff;
+}
+
+/* Focus Effect */
+.checkout-right .payment-select:focus {
+  border-color: #388e3c;
+  box-shadow: 0px 0px 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Disabled Styling */
+.checkout-right .payment-select:disabled {
+  background: #eee;
+  cursor: not-allowed;
+  color: #888;
+}
+
+
+/* ✅ Total Amount */
+.checkout-right .total-amount {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    border-top: 2px solid #000;
+    padding-top: 10px;
+}
+
+/* ✅ Checkout Button */
+.checkout-right .checkout-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #32CD32, #008000);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.checkout-right .checkout-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #28a745, #006400);
+}
+
+/* ✅ Secure Payment Info */
+.checkout-right .secure-payment {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    .checkout-content {
+        flex-direction: column;
+    }
+
+    .checkout-right {
+        width: 100%;
+    }
+}
+/* ✅ Address Form */
+.address-form {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+.address-form h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.address-form input {
+  width: 96.5%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.address-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid green;
+  color: green;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #28a745;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.saved-address {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+.save-btn:hover{
+  background: #218838;
+    transform: scale(1.05);
+}
+/* Saved Address Styling */
+.saved-address {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Address Actions (Edit & Delete) */
+.address-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.edit-btn, .delete-btn {
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.edit-btn {
+  background: #ff9800;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #e68900;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+}
+.secure-payment {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.secure-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.secure-item:hover {
+  background: #e8f5e9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.secure-icon {
+  width: 30px; /* Adjust size */
+  height: 30px;
+}
+

@@ -23,14 +23,6 @@ const Home = () => {
     autoplaySpeed: 2000,
   };
 
-  const scrollLeft = (id) => {
-    document.getElementById(id).scrollBy({ left: -300, behavior: "smooth" });
-  };
-
-  const scrollRight = (id) => {
-    document.getElementById(id).scrollBy({ left: 300, behavior: "smooth" });
-  };
-
   // Products data with unique names and images
   const featuredProducts = [
     { id: 1, name: "Premium Fertilizer", price: 500, image: "/assets/fertilizer.png" },
@@ -100,9 +92,9 @@ const Home = () => {
               <p>Price: ₹{product.price}</p>
               <p>⭐ {4 + Math.random().toFixed(1)}/5</p>
               <div className="button-group">
-                <button className="view-details" onClick={() => navigate(`/product/${product.id}`)}>
-                  View Details
-                </button>
+              <button className="view-details" onClick={() => navigate(`/product/${product.id}`)}>
+  View Details
+</button>
                 {isInCart(product.id) ? (
                   <button className="go-to-cart" onClick={() => navigate("/cart")}>Go to Cart </button>
                 ) : (

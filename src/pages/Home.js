@@ -48,8 +48,8 @@ const Home = () => {
   ];
   
 
-  const handleCategoryClick = (route) => {
-    navigate(route);
+  const handleCategoryClick = (categoryName) => {
+    navigate(`/category/${categoryName.toLowerCase()}`);
   };
 
   return (
@@ -73,7 +73,7 @@ const Home = () => {
             <div
               className="category"
               key={index}
-              onClick={() => handleCategoryClick(category.route)} // Navigate to category page
+              onClick={() => handleCategoryClick(category.name)} // Navigate to category page
             >
               <img src={category.image} alt={category.name} />
               <span>{category.name}</span>

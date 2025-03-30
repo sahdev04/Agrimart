@@ -1,20 +1,44 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import "../styles/Login.css"; // Ensure this file is linked
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Eye icons for password toggle
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useAuth } from "../context/AuthContext"; // Import Auth Context
+import "../styles/Login.css"; 
 
 const Login = () => {
+  const { login } = useAuth(); // Get login function from AuthContext
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Logging in with:", email, password, rememberMe);
+
+    // Dummy User Data
+    const userData = {
+      name: "John Doe",
+      email,
+      avatar: "/assets/user-avatar.png",
+    };
+
+    login(userData); // Store user in context
+    if (rememberMe) {
+      localStorage.setItem("user", JSON.stringify(userData)); // Save in localStorage
+    }
+    navigate("/"); // Redirect to home
+  };
+
+  const handleGoogleLogin = () => {
+    const googleUserData = {
+      name: "Google User",
+      email: "googleuser@gmail.com",
+      avatar: "/assets/google-avatar.png",
+    };
+
+    login(googleUserData);
+    localStorage.setItem("user", JSON.stringify(googleUserData)); // Store in localStorage
+    navigate("/");
   };
 
   return (
@@ -32,6 +56,7 @@ const Login = () => {
               placeholder="Enter your Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
 
@@ -44,6 +69,7 @@ const Login = () => {
                 placeholder="Enter your Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
               <span className="toggle-password" onClick={() => setShowPassword(!showPassword)}>
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -66,14 +92,14 @@ const Login = () => {
           </div>
 
           {/* Sign in Button */}
-          <button type="submit" className="login-btn" onClick={() => navigate("/Home")}>Sign in</button>
+          <button type="submit" className="login-btn">Sign in</button>
         </form>
 
         <div className="divider">Or, sign in with Google</div>
 
         {/* Google Sign-In Button with Image */}
-        <button className="google-btn">
-        <img src="/assets/google.png" alt="Google" className="google-logo" />
+        <button className="google-btn" onClick={handleGoogleLogin}>
+          <img src="/assets/google.png" alt="Google" className="google-logo" />
           Sign in with Google
         </button>
 

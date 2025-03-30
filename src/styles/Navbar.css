@@ -73,7 +73,7 @@
 }
 
 .search-btn {
-  background: green;
+  background: #28a745;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -92,30 +92,40 @@
 /* Cart Badge */
 .cart-icon {
   position: relative;
+  font-size: 20px !important; /* Icon Size Increase */
+  color: black;
 }
 
 .cart-badge {
   position: absolute;
-  top: -5px;
+  top: -6px;
   right: -10px;
-  background-color: red;
+  background-color: #ff9800; /* Orange Shade for a Premium Look */
   color: white;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: bold;
   border-radius: 50%;
-  padding: 2px 4px;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Soft Shadow for Stylish Look */
+  border: 1px solid white; /* White Border for a Clean Look */
 }
+
+
 
 
 /* Login Button */
 .login-btn {
-  background: green;
+  background: #28a745;
   color: white;
   border: none;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: bold;
+  padding: 8px 20px !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -133,6 +143,69 @@
 
 /* Active page (selected link) */
 .nav-links a.active {
-  color: green;
-  font-weight: bold;
+  color: #28a745;
+}
+/* ---- Profile Avatar ---- */
+.avatar {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+}
+
+/* ---- Dropdown Menu ---- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hidden by default */
+.dropdown-menu {
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+}
+
+/* Dropdown Links & Button */
+.dropdown-menu a,
+.dropdown-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: background 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background: #f3f3f3;
+}
+
+/* Logout Button Style */
+.dropdown-menu button {
+  color: #333;
+  font-family: 'Poppins', sans-serif;
 }

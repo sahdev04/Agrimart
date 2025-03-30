@@ -199,7 +199,7 @@
 .view-details {
   background: white;
   color: black;
-  border: 2px solid #1e7e34;
+  border: 2px solid #28a745;
   padding: 6px 10px;
   font-size: 12px;
   border-radius: 5px;
@@ -208,13 +208,13 @@
 }
 
 .view-details:hover {
-  background: #1e7e34;
+  background: #28a745;
   color: white;
 }
 
 /* Add to Cart */
 .add-to-cart {
-  background-color: #1e7e34 !important;
+  background-color: #28a745 !important;
   color: white;
   border: none;
   padding: 6px 10px;
@@ -225,7 +225,7 @@
 }
 
 .add-to-cart:hover {
-  background-color: #218838;
+  background-color: #218838 !important;
 }
 
 /* "View All" Button */

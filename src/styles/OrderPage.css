@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Order Page Container */
+.order-page {
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.breadcrumb-link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.breadcrumb-link:hover {
+  color: #007b00; /* Green Hover Effect */
+}
+
+/* Home Icon */
+.home-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* Order Page Layout */
+.order-container {
+  display: flex;
+  gap: 20px;
+  height: 450px; /* Fixed Height for Better UI */
+}
+
+/* Filters Sidebar (Static) */
+.filters {
+  width: 220px;
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.filters h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.filters p {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.filter-option input {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.filter-option label {
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Order List (Scrollable) */
+.order-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  height: 100%;
+  padding-right: 8px;
+}
+
+/* Custom Scrollbar */
+.order-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+/* Order Card */
+.order-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 100%;
+  max-height: 75px;
+}
+
+.order-card:hover {
+  transform: scale(1.02);
+}
+
+/* Product Image */
+.product-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* Order Info */
+.order-info {
+  flex-grow: 1;
+}
+
+.order-info h4 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.order-info p {
+  font-size: 11px;
+  color: #555;
+  margin: 1px 0;
+}
+
+/* Order Status */
+.order-status {
+  text-align: right;
+}
+
+.status {
+  font-weight: 600;
+  font-size: 11px;
+  color: #007b00;
+  margin-right: 50px;
+}
+
+.date {
+  font-size: 10px;
+  color: #777;
+  margin-right: 50px;
+}

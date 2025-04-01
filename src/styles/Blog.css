@@ -8,7 +8,10 @@
 
 /* 🔥 Hero Section */
 .blog-hero {
-  /*background: url('/assets/agriculture-bg.jpg') center/cover no-repeat;*/
+  background-image: url('http://localhost:3000/assets/agriculture-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -18,6 +21,7 @@
 .blog-hero h1 {
   font-size: 36px;
   font-weight: 700;
+  color: white;
 }
 
 .blog-hero p {

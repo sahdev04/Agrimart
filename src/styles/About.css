@@ -7,19 +7,18 @@
 
 /* 🔥 Hero Section */
 .hero-section {
- /* background-image: url("/assets/agriculture-bg.jpg");*/
+  background-image: url('http://localhost:3000/assets/agriculture-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 70vh;
+  width: 100%; /* Ensure karein ki container full width le */
+  overflow: hidden; /* Extra image part cut ho jaye */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-}
-
-.hero-content {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  border-radius: 12px;
 }
 
 .hero-content h1 {
